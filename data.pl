@@ -1,3 +1,4 @@
+%list(modul1)
 judul('SISTEM DIAGNOSA ANALISIS PENYAKIT JANTUNG').
 pesan('jawab pertanyaan dengan y atau t').
 pertanyaan('apakah dada terasa nyeri secara tiba-tiba?',nyeri).
@@ -6,7 +7,8 @@ pertanyaan('apakah kondisi cepat lelah dan lemas?',lemas).
 pertanyaan('apakah kepala terasa pusing?',pusing).
 pertanyaan('apakah terjadi pembengkakan di sekitar kaki dan sendi?',bengkak).
 pertanyaan('apakah nafas pendek?',nafas_pendek).
-
+%Binarytree(modul6)
+%disini memuat tree karena setiap pernyataan membuat/memuat suatu alur baru menyerupai tree dan menghasilkan hasil yang berbeda disetiap peryataan
 rule(1,coroner):-
     observation(nyeri),
     observation(sesak_nafas),
@@ -55,6 +57,7 @@ rule(6,gagal_jantung):-
     observation(lemas),
     observation(bengkak),
     observation(pusing).
+%aritmatika disini digunakan untuk menjumlah/menyimpulkan dari beberapa rule sehingga dapat menemukan hasil akhir yaitu jawaban yang sesuai(modul3)
 jawaban(coroner, ' anda mengalami jantung koroner').
 jawaban(hipertensi, ' anda mengalami hipertensi').
 jawaban(pericarditis, ' anda mengalami pericarditis').
