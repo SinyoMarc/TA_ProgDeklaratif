@@ -1,5 +1,6 @@
 inisialisasi:-
-    write('**SINYO MARCELLINO/180535632564**'),nl,
+    write('**Kelompok 180535632564_533_507_586_534**'),nl,
+    write('**Sistem Diagnosa Penyakit Jantung**'),nl,
     consult('data.pl'),
     judul(Judul),write(Judul),nl,nl,
     write_pesan,nl.
@@ -17,9 +18,12 @@ pengamatan:-
     write(Tanya),
     read(Jawaban),
     Jawaban =y,
+%list_of_list(modul5)
     assert(observation(Observasi)),
     fail.
 pengamatan.
+%list_of_list&ManipulasiList(modul2)
+%disini digunaka untuk menghapus suatu list
 delete:- retractall(observation(_)).
 go:-
 
@@ -27,7 +31,7 @@ go:-
 		read(Jawab),nl,
         delete,
 		check(Jawab).
-
+%logika ‘AND’ dan ‘OR’ sampai sebuah terminal ditentukan sebagai objek. Bila inference engine tidak dapat menentukan objek maka akan meminta informasi lain(modul4)
 main:-
     inisialisasi,
     write('masukan Nama : '),read(Nama),
@@ -46,17 +50,4 @@ main:-
    write('Gangguan kesehatan tersebut disebabkan oleh kebiasaan buruk anda. Lakukan olahraga teratur dan tidur secukupnya'),nl,nl,
    delete.
 
-pl_config_dylib :-
-    current_prolog_flag(apple, true),
-    !,
-    jpl_config_dylib(['libjvm.dylib', 'libjsig.dylib', 'libjawt.dylib']).
-jpl_config_dylib :-
-    print_message(warning, jpl_config(apple_only)).
 
-jpl_config_dylib(Libs) :-
-    java_home(JavaHome),
-    debug(dylib(jpl), 'Java home at ~p', [JavaHome]),
-    dylib_jpl(Dylib),
-    debug(dylib(jpl), 'JPL at ~p', [Dylib]),
-    dylib_dependencies(Dylib, Dependencies),
-    maplist(update_dylib(JavaHome, Dylib, Dependencies), Libs).
