@@ -4,7 +4,7 @@ Program ada dua, yaitu program java prolog_connect dan prolog yang terhubung den
 Prolog_connect adalah folder netbeans untuk connect ke prolog
 - file analisis dan data yaitu prolog to prolog
 - file pakar1 file prolog to java
-- file prolog_connect yaitu java to prolog
+- file prolog_connect.rar yaitu java to prolog
 keterangan program
 video persentasi https://drive.google.com/open?id=1WSE7X0-36UDMfW1meWm3OYODCpUgWtIa
 pada file data.pl terdapat modul1(list), modul3(aritmatika), modul6(binarytree)
